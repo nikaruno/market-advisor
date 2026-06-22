@@ -1,0 +1,53 @@
+{
+  "sectors": {
+    "electricity": {
+      "name": "Electricity & Utilities",
+      "enabled": true,
+      "type": "scraped",
+      "region": "global",
+      "url": "https://companiesmarketcap.com/electricity/largest-electricity-companies-by-market-cap/"
+    },
+    "semiconductors": {
+      "name": "Semiconductors",
+      "enabled": true,
+      "type": "scraped",
+      "region": "global",
+      "url": "https://companiesmarketcap.com/semiconductors/largest-semiconductor-companies-by-market-cap/"
+    },
+    "software": {
+      "name": "Software",
+      "enabled": true,
+      "type": "scraped",
+      "region": "global",
+      "url": "https://companiesmarketcap.com/software/largest-software-companies-by-market-cap/"
+    },
+    "energy": {
+      "name": "Energy",
+      "enabled": true,
+      "type": "scraped",
+      "region": "global",
+      "url": "https://companiesmarketcap.com/energy/largest-companies-by-market-cap/"
+    },
+    "defense": {
+      "name": "Defense & Aerospace",
+      "enabled": true,
+      "type": "scraped",
+      "region": "global",
+      "url": "https://companiesmarketcap.com/aerospace/largest-companies-by-market-cap/"
+    },
+    "electronics": {
+      "name": "Electronics Manufacturing",
+      "enabled": true,
+      "type": "scraped",
+      "region": "global",
+      "url": "https://companiesmarketcap.com/electronics/largest-electronic-manufacturing-by-market-cap/"
+    },
+    "ai": {
+      "name": "Artificial Intelligence",
+      "enabled": true,
+      "type": "scraped",
+      "region": "global",
+      "url": "https://companiesmarketcap.com/artificial-intelligence/largest-ai-companies-by-marketcap/"
+    }
+  }
+}

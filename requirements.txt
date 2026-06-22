@@ -1,0 +1,14 @@
+# Core data + numerics
+pandas>=2.0
+numpy>=1.24
+
+# Market data (keep yfinance current; Yahoo's endpoints change often)
+yfinance>=0.2.40
+curl_cffi>=0.7          # helps yfinance avoid throttling/blocking
+
+# Universe scraping (companiesmarketcap.com)
+requests>=2.31
+beautifulsoup4>=4.12
+
+# GUI
+streamlit>=1.30

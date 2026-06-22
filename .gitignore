@@ -1,0 +1,7 @@
+# Build output
+log/
+data/
+
+*.pyc
+__pycache__/
+.venv/

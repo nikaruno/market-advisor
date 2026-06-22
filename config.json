@@ -1,0 +1,21 @@
+{
+  "companies_per_sector": 10,
+  "usd_only": true,
+  "active_sectors": [
+    "electricity",
+    "semiconductors",
+    "software",
+    "energy",
+    "defense",
+    "electronics",
+    "ai"
+  ],
+  "weights": {
+    "roic": 0.25,
+    "fcf": 0.2,
+    "cash_quality": 0.15,
+    "leverage": 0.15,
+    "revenue_growth": 0.1,
+    "ebitda_growth": 0.15
+  }
+}
