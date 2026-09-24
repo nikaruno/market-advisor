@@ -13,9 +13,9 @@ echo "==========================================================================
 echo ""
 
 if command -v streamlit &> /dev/null; then
-    streamlit run gui/quality_app.py --server.port=8501 --server.address=localhost
+    streamlit run gui/quality_app.py --server.port=${STREAMLIT_SERVER_PORT:-8501} --server.address=${STREAMLIT_SERVER_ADDRESS:-localhost}
 elif [ -f "$HOME/.local/bin/streamlit" ]; then
-    "$HOME/.local/bin/streamlit" run gui/quality_app.py --server.port=8501 --server.address=localhost
+    "$HOME/.local/bin/streamlit" run gui/quality_app.py --server.port=${STREAMLIT_SERVER_PORT:-8501} --server.address=${STREAMLIT_SERVER_ADDRESS:-localhost}
 else
-    python3 -m streamlit run gui/quality_app.py --server.port=8501 --server.address=localhost
+    python3 -m streamlit run gui/quality_app.py --server.port=${STREAMLIT_SERVER_PORT:-8501} --server.address=${STREAMLIT_SERVER_ADDRESS:-localhost}
 fi
