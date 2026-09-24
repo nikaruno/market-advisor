@@ -1,5 +1,5 @@
 {
-  "companies_per_sector": 10,
+  "companies_per_sector": 25,
   "usd_only": true,
   "active_sectors": [
     "electricity",
