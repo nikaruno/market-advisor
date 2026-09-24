@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(prun python3:*)",
+      "Bash(prun pip:*)",
+      "Bash(prun python -m:*)",
+      "Bash(pysetup:*)",
+      "Bash(ls:*)", "Bash(cat:*)", "Bash(head:*)", "Bash(tail:*)",
+      "Bash(grep:*)", "Bash(rg:*)", "Bash(find:*)", "Bash(wc:*)",
+      "Bash(stat:*)", "Bash(du:*)", "Bash(mkdir:*)",
+      "Bash(git status)", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git add:*)",
+      "WebSearch",
+      "WebFetch(domain:finance.yahoo.com)",
+      "WebFetch(domain:www.nasdaq.com)",
+      "WebFetch(domain:www.sec.gov)",
+      "WebFetch(domain:companiesmarketcap.com)"
+    ],
+    "ask": [
+      "Bash(prun bash run_quality.sh:*)",
+      "Bash(prun bash run_technical.sh:*)",
+      "Bash(prun bash run_valuation.sh:*)",
+      "Bash(prun bash run_quality_gui.sh:*)",
+      "Bash(prun streamlit:*)",
+      "Bash(git commit:*)",
+      "Edit(config.json)",
+      "Edit(sectors.json)"
+    ],
+    "deny": [
+      "Bash(sudo:*)",
+      "Bash(rm -rf:*)",
+      "Bash(git push:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Read(~/.ssh/**)"
+    ]
+  },
+  "env": {
+    "BASH_DEFAULT_TIMEOUT_MS": "900000",
+    "BASH_MAX_TIMEOUT_MS": "3600000"
+  }
+}

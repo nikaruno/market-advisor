@@ -1,0 +1,3 @@
+# devenv: image + runtime settings for this project
+IMAGE=python
+# PORT=8501        # Streamlit GUI port (host 127.0.0.1 only); PORT=none to publish nothing

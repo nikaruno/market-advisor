@@ -5,3 +5,9 @@ data/
 *.pyc
 __pycache__/
 .venv/
+
+# devenv / local environment
+.venv/
+.claude/settings.local.json
+reports/*.md
+!reports/.gitkeep
