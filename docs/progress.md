@@ -23,23 +23,30 @@ retargets it. Run: `prun python3 scripts/freshness.py`.
   Dropped: SPCX, HONA, BETA (2 yrs, need 3), FRMI (1 yr), UPST (missing data).
   157→133 is cross-sector overlap; 151→128 at scoring is pure dedup.
 - **valuation** FRESH, computed 13:14. 133 rows, 265 quarterly files, no warnings.
-- **technical** MISSING — never run. No momentum view exists.
+- **technical** FRESH, rated 13:24. 133/133 companies, 133 price files, no
+  warnings. Universe-wide split: 41 Strong Buy / 24 Buy / 10 Neutral /
+  16 Sell / 42 Strong Sell.
+- `freshness.py` reports all three pipelines FRESH for the first time (exit 0).
 
 ## Reports
 - `reports/2026-09-24-cheap-and-high-quality.md` — the 33 Top-25% quality names
   ranked by EV/EBITDA, ten cheapest covered with intro + counter-case.
+  Regenerated 13:26 with technical ratings folded in. Key finding: cheapness
+  and momentum are inversely aligned — the 3 cheapest (ADBE, INTU, GOOG) are
+  all Sell/Strong Sell, while 4 of the 5 most expensive are Strong Buy.
+  ADBE and INTU are below all 10 moving averages.
 
-## Uncommitted working state (as of 2026-09-24)
-Nothing from this session has been committed yet:
-- `config.json` — `companies_per_sector` 10 → 25 (weights untouched).
-- `docs/progress.md` — this file.
-- `scripts/` — untracked; contains the new `freshness.py`.
+## Git state (as of 2026-09-24)
+Committed as `c7de309` on branch `freshness-script-and-first-runs` (branched
+from `main`, not merged): `scripts/freshness.py`, `config.json` (pool 25),
+`docs/progress.md`. Uncommitted since that commit:
+- `docs/progress.md` — this file, updated after the technical run.
 - `reports/2026-09-24-cheap-and-high-quality.md` — **git-ignored**
   (`.gitignore` has `reports/*.md`), so reports live only in the working copy.
 `data/` is git-ignored by design and is not part of any commit.
 
 ## Next step
-`run_technical.sh` if a momentum view is wanted (the only MISSING pipeline).
+Open. All three pipelines are fresh; nothing is blocked.
 
 ## Open questions
 - Refresh cadences in docs/agent.md are a first guess; tune with experience.
