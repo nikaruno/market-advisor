@@ -1,8 +1,10 @@
 # Progress
 
 ## Current state
-Phase 1 done: `scripts/freshness.py`. Quality and valuation pipelines have both
-run at `companies_per_sector: 25`. First report written.
+Phase 1 done: `scripts/freshness.py`. Project moved to a second PC on
+2026-09-26: fresh venv, all three pipelines re-run from scratch at
+`companies_per_sector: 25`, GUI verified. The 2026-09-24 report did not carry
+over (reports are git-ignored) and needs regenerating if wanted here.
 
 `scripts/freshness.py` inspects `data/` for all three pipelines (8 datasets) and
 prints file count, row count, newest/oldest timestamps, age in days, and a
@@ -17,16 +19,27 @@ retargets it. Run: `prun python3 scripts/freshness.py`.
   zero. Transient, not a rate-limit wall. Different signature from the
   documented NoneType/empty-data throttling.
 
-## Data state (all as of 2026-09-24)
-- **quality** FRESH, scored 13:01. `companies_per_sector: 25` → 157 universe
-  rows / 133 unique / **128 scored**. 125 of 128 at 100% metric completeness.
-  Dropped: SPCX, HONA, BETA (2 yrs, need 3), FRMI (1 yr), UPST (missing data).
-  157→133 is cross-sector overlap; 151→128 at scoring is pure dedup.
-- **valuation** FRESH, computed 13:14. 133 rows, 265 quarterly files, no warnings.
-- **technical** FRESH, rated 13:24. 133/133 companies, 133 price files, no
-  warnings. Universe-wide split: 41 Strong Buy / 24 Buy / 10 Neutral /
-  16 Sell / 42 Strong Sell.
-- `freshness.py` reports all three pipelines FRESH for the first time (exit 0).
+## Data state (all as of 2026-09-26, second PC)
+- **quality** FRESH, scored 11:58. 158 universe rows / 134 unique /
+  **129 scored** (was 157/133/128 on 2026-09-24): one extra name from the
+  re-scrape, so **scores are not strictly comparable to the 09-24 run**.
+  126 complete, 3 partial. Same 5 dropped (SPCX, HONA, BETA, FRMI, UPST).
+  Tiers 33/32/32/32. A divide-by-zero RuntimeWarning fires on NEE in the
+  revenue-CAGR line, but its stored revenue_cagr is finite (9.4%); harmless
+  but worth a look.
+- **valuation** FRESH, computed 12:02. 134 rows, 120 with EV/EBITDA,
+  267 quarterly files, no warnings. Median EV/EBITDA 20.2; cheapest EQNR 2.69.
+- **technical** FRESH, rated 12:00. 134/134 companies, last bar 2026-09-25
+  (Fri close). Split: 42 Strong Buy / 21 Buy / 13 Neutral / 16 Sell /
+  42 Strong Sell.
+- No throttling or timeouts on any run. Logs in `log/*-2026-09-26.log`.
+- GUI: all four tabs render headless (AppTest) with no exceptions; served on
+  :8501. Streamlit 1.64 warns `use_container_width` is deprecated (6 uses in
+  `gui/quality_app.py`) — works for now, should migrate to `width=`.
+
+### Previous data state (first PC, 2026-09-24)
+Quality 157/133/128 scored; valuation 133 rows; technical 133 rated,
+41/24/10/16/42.
 
 ## Reports
 - `reports/2026-09-24-cheap-and-high-quality.md` — the 33 Top-25% quality names
@@ -36,17 +49,14 @@ retargets it. Run: `prun python3 scripts/freshness.py`.
   all Sell/Strong Sell, while 4 of the 5 most expensive are Strong Buy.
   ADBE and INTU are below all 10 moving averages.
 
-## Git state (as of 2026-09-24)
-Committed as `c7de309` on branch `freshness-script-and-first-runs` (branched
-from `main`, not merged): `scripts/freshness.py`, `config.json` (pool 25),
-`docs/progress.md`. Uncommitted since that commit:
-- `docs/progress.md` — this file, updated after the technical run.
+## Git state (as of 2026-09-26)
+`c7de309` and `029dd27` are on `main` (the feature branch was merged).
 - `reports/2026-09-24-cheap-and-high-quality.md` — **git-ignored**
   (`.gitignore` has `reports/*.md`), so reports live only in the working copy.
 `data/` is git-ignored by design and is not part of any commit.
 
 ## Next step
-Open. All three pipelines are fresh; nothing is blocked.
+Open. All three pipelines are fresh on the second PC; nothing is blocked.
 
 ## Open questions
 - Refresh cadences in docs/agent.md are a first guess; tune with experience.
