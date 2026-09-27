@@ -47,7 +47,18 @@ Quality 157/133/128 scored; valuation 133 rows; technical 133 rated,
   Regenerated 13:26 with technical ratings folded in. Key finding: cheapness
   and momentum are inversely aligned — the 3 cheapest (ADBE, INTU, GOOG) are
   all Sell/Strong Sell, while 4 of the 5 most expensive are Strong Buy.
-  ADBE and INTU are below all 10 moving averages.
+  ADBE and INTU are below all 10 moving averages. (First PC only; not
+  carried over.)
+- `reports/2026-09-27-cheap-and-high-quality.html` — top 5 of the Top-25%
+  tier ranked on EV/**normalized** EBITDA: ADBE, INTU, ADP, CRM, META. Each
+  has: stat tiles; a 1y price chart with SMA50/200, RSI and MACD; annual and
+  quarterly revenue/EBITDA bars; a peer table plus a peer paragraph; data
+  says / might mean / uncertain; and primary-source news (SEC 8-Ks, IR),
+  checked 2026-09-27. Self-contained HTML (inline SVG), printable to PDF.
+  Built by `scripts/build_report.py` (numbers from data/) from
+  `reports/2026-09-27-cheap-and-high-quality.notes.json` (written commentary).
+  Key finding: GOOG's reported EBITDA includes ~$149B of securities gains, so
+  it drops from #3 to #10 once normalized. 4 of the 5 are software.
 
 ## Git state (as of 2026-09-26)
 `c7de309` and `029dd27` are on `main` (the feature branch was merged).
@@ -56,7 +67,9 @@ Quality 157/133/128 scored; valuation 133 rows; technical 133 rated,
 `data/` is git-ignored by design and is not part of any commit.
 
 ## Next step
-Open. All three pipelines are fresh on the second PC; nothing is blocked.
+Decide on proposal P1 in docs/agent.md (rank valuation on Normalized
+EBITDA). Decide whether reports/*.html and *.notes.json should be git-ignored
+like reports/*.md (they currently are not).
 
 ## Open questions
 - Refresh cadences in docs/agent.md are a first guess; tune with experience.
@@ -72,5 +85,11 @@ Open. All three pipelines are fresh on the second PC; nothing is blocked.
   whether the score leans on cash-flow metrics GAAP earnings don't support.
 - Scores are pool-wide percentiles over these 128 names; not comparable to the
   earlier 22-name run, and they shift whenever the pool changes.
+- Report peer sets are limited to the universe: PAYX, WDAY, AMZN, Canva,
+  Figma and others are absent, so peer comparisons are partial.
+- META: EV/EBITDA ignores capex. Q2 2026 FCF was $0.78B on $31B capex, so an
+  FCF-based valuation view may be worth adding.
+- Node isn't available in the container, so the dataviz palette validator
+  can't run. The report uses the documented pre-validated slots.
 - Age in freshness.py is file mtime (when the pipeline wrote), not the as-of
   date of the market data inside.
