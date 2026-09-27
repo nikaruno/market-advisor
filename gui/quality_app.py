@@ -1,18 +1,27 @@
 """
 Equity Screener GUI (standalone).
 
-Two tabs, each reading the output of an independent pipeline:
+Tabs, each reading the output of an independent pipeline:
   - Quality   : data/fundamentals/absolute_scores.csv   (run: bash run_quality.sh)
   - Technical : data/technical/technical_analysis.csv    (run: bash run_technical.sh)
+  - Valuation : data/valuation/valuation.csv             (run: bash run_valuation.sh)
+  - Company Lookup: one company across all three, plus a "Research with Claude"
+    button that runs scripts/research_company.py (headless Claude Code) and
+    shows the resulting reports/<date>-<TICKER>-deep-dive.html.
 
 Run the quality pipeline first — it builds the company universe the technical
-pipeline then analyzes.
+and valuation pipelines then analyze.
 
 Run: bash run_quality_gui.sh
 """
 import streamlit as st
 import pandas as pd
+import base64
+import json
 import os
+import subprocess
+import sys
+import time
 from pathlib import Path
 
 # --- Run from the repo root whether launched from repo/ or repo/gui/ ---
@@ -29,6 +38,9 @@ SCORES_PATH = Path("data") / "fundamentals" / "absolute_scores.csv"
 TECH_PATH = Path("data") / "technical" / "technical_analysis.csv"
 VAL_PATH = Path("data") / "valuation" / "valuation.csv"
 PRICES_DIR = Path("data") / "technical" / "prices"
+REPORTS_DIR = Path("reports")
+RESEARCH_DIR = Path("log") / "research"
+RESEARCH_LOCK = RESEARCH_DIR / "running.lock"
 
 # Quality metric column -> (display label, kind):
 #   'pct'   -> stored as a fraction, shown x100 with a % label
@@ -173,6 +185,97 @@ def format_lookup_table(peers, selected):
     if 'market_cap' in peers.columns:
         out['Mkt Cap $B'] = (peers['market_cap'] / 1e9).round(1).values
     return out
+
+
+# ----------------------------------------------------------------------------
+# Deep-dive research (Company Lookup): runs scripts/research_company.py, which
+# drives headless Claude Code, in a detached process and polls its status file.
+# ----------------------------------------------------------------------------
+def _research_job():
+    """(pid, ticker) of the running research job, or None."""
+    try:
+        pid, tk = RESEARCH_LOCK.read_text().split()
+        os.kill(int(pid), 0)
+        return int(pid), tk
+    except (FileNotFoundError, ValueError, ProcessLookupError, PermissionError):
+        return None
+
+
+def _research_status(ticker):
+    try:
+        return json.loads((RESEARCH_DIR / f"{ticker}.status.json").read_text())
+    except (FileNotFoundError, json.JSONDecodeError):
+        return None
+
+
+def _stale_pipelines():
+    sys.path.insert(0, str(Path("scripts").resolve()))
+    try:
+        from freshness import DATASETS, inspect
+        return sorted({r.ds.pipeline for r in (inspect(d) for d in DATASETS)
+                       if r.verdict != "FRESH"})
+    except Exception:
+        return []
+
+
+@st.fragment(run_every="5s")
+def _research_progress(ticker):
+    status = _research_status(ticker) or {}
+    if _research_job() is None:
+        st.rerun(scope="app")  # finished: refresh the report list
+    started = status.get("started", "")[11:16]
+    with st.status(f"Researching {ticker} (started {started}) — step: "
+                   f"{status.get('step') or 'starting'}", expanded=True):
+        for line in status.get("log", [])[-8:]:
+            st.write(line)
+
+
+def deep_dive_section(ticker):
+    safe_t = ticker.replace(".", "_")
+    st.subheader("Deep-dive report")
+    job = _research_job()
+    stale = _stale_pipelines()
+    if stale:
+        st.warning(f"Stale data: {', '.join(stale)}. A report now will say so; refresh the "
+                   "pipelines first if you want current figures.")
+    c1, c2 = st.columns([1, 3])
+    with c1:
+        clicked = st.button(f"Research {ticker} with Claude", type="primary",
+                            disabled=job is not None, key=f"research_{safe_t}")
+    with c2:
+        st.caption("Runs headless Claude Code with only web search/fetch: business and "
+                   "segments, results and guidance from filings, peers, valuation scenarios, "
+                   "risks and catalysts, then a fact-check pass against the pipeline data. "
+                   "Takes several minutes and uses your Claude plan. One run at a time.")
+    if clicked:
+        RESEARCH_DIR.mkdir(parents=True, exist_ok=True)
+        with open(RESEARCH_DIR / f"{safe_t}.out.log", "w") as log:
+            subprocess.Popen([sys.executable, "scripts/research_company.py", ticker],
+                             stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+        time.sleep(1.5)
+        st.rerun()
+
+    if job is not None:
+        if job[1] != ticker:
+            st.info(f"A research run for {job[1]} is in progress; wait for it to finish.")
+        _research_progress(job[1])
+    else:
+        status = _research_status(ticker)
+        if status and status.get("state") == "failed":
+            st.error(f"Last research run failed: {status.get('error')}. Details: "
+                     f"`{RESEARCH_DIR / (safe_t + '.out.log')}`")
+
+    reports = sorted(REPORTS_DIR.glob(f"*-{safe_t}-deep-dive.html"), reverse=True)
+    if not reports:
+        st.caption("No deep-dive report for this company yet.")
+        return
+    pick = st.selectbox("Report", reports, format_func=lambda p: p.name, key=f"report_{safe_t}")
+    html = pick.read_text()
+    st.download_button("Download HTML", html, file_name=pick.name, mime="text/html",
+                       key=f"dl_{safe_t}")
+    # The report contains model-written text (escaped by the builder); a data: URL
+    # still loads it in an opaque origin, isolated from the Streamlit app.
+    st.iframe("data:text/html;base64," + base64.b64encode(html.encode()).decode(), height=1500)
 
 
 # ============================================================================
@@ -385,3 +488,6 @@ with tab_lookup:
                          use_container_width=True, hide_index=True)
         else:
             st.info("No sector information available.")
+
+        # --- Deep-dive report (headless Claude Code research) ---
+        deep_dive_section(selected)

@@ -60,6 +60,29 @@ Quality 157/133/128 scored; valuation 133 rows; technical 133 rated,
   Key finding: GOOG's reported EBITDA includes ~$149B of securities gains, so
   it drops from #3 to #10 once normalized. 4 of the 5 are software.
 
+- `reports/2026-09-27-ADBE-deep-dive.html` — first single-company deep dive,
+  produced by the new GUI button (below). Test run; the numbers were
+  spot-checked against the Adobe facts verified by hand the day before.
+
+## Deep-dive research button (2026-09-27)
+Company Lookup tab → "Research <TICKER> with Claude" runs
+`scripts/research_company.py` detached, and the tab polls
+`log/research/<TICKER>.status.json` every 5 seconds. Pipeline:
+1. A data brief from data/ (all three pipelines, statements, universe peer
+   candidates, freshness verdicts).
+2. `claude -p` with only WebSearch/WebFetch (no Bash, no file tools) returns
+   schema-validated JSON.
+3. A second `claude -p` with no tools fact-checks every claim against the
+   brief.
+4. `scripts/build_company_report.py` renders the HTML (all model text
+   escaped; scenario arithmetic computed in Python).
+
+Only one run at a time (lock file). Each run takes about 5-6 minutes, 14-17
+turns and about $1.40 of estimated usage. The report is shown in a sandboxed
+data: URL iframe. Stale data is flagged in the GUI and the report, never
+refreshed automatically. CLI: `prun python3 scripts/research_company.py
+TICKER [--no-verify] [--model ...] [--brief-only]`.
+
 ## Git state (as of 2026-09-26)
 `c7de309` and `029dd27` are on `main` (the feature branch was merged).
 - `reports/2026-09-24-cheap-and-high-quality.md` — **git-ignored**
@@ -67,8 +90,9 @@ Quality 157/133/128 scored; valuation 133 rows; technical 133 rated,
 `data/` is git-ignored by design and is not part of any commit.
 
 ## Next step
-Decide on proposal P1 in docs/agent.md (rank valuation on Normalized
-EBITDA). Decide whether reports/*.html and *.notes.json should be git-ignored
+Decide on proposals P1 (rank on Normalized EBITDA) and P2 (subtract
+short-term investments in EV) in docs/agent.md; both change the valuation
+ranking, so they are best decided together. Decide whether reports/*.html and *.notes.json should be git-ignored
 like reports/*.md (they currently are not).
 
 ## Open questions
@@ -91,5 +115,10 @@ like reports/*.md (they currently are not).
   FCF-based valuation view may be worth adding.
 - Node isn't available in the container, so the dataviz palette validator
   can't run. The report uses the documented pre-validated slots.
+- Deep-dive notes cite aggregators when no primary source exists (labelled).
+  The fact-check pass verifies numbers against the brief only, not web
+  facts. Web facts rely on the research prompt's primary-source rule.
+- The Lookup peer table and the deep-dive peers are limited to the universe
+  (the same caveat as the 5-name report).
 - Age in freshness.py is file mtime (when the pipeline wrote), not the as-of
   date of the market data inside.

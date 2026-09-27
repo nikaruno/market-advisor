@@ -59,6 +59,23 @@ _(Claude appends proposals here: what, why, expected effect, how to verify.)_
   `reports/2026-09-27-cheap-and-high-quality.html`, which already computes
   both bases side by side.
 
+### P2 — Subtract short-term investments in EV (2026-09-27, pending)
+- **What:** in `valuation_analysis.py`, reorder `CASH_KEYS` so that
+  "Cash Cash Equivalents And Short Term Investments" comes before
+  "Cash And Cash Equivalents".
+- **Why:** EV currently subtracts cash only, so short-term investments count
+  as if they were operating value. On 2026-09-26 data, 35 companies hold more
+  than $1B that is left out: GOOG $187B, META $75B, MSFT $56B, NVDA $40B,
+  AAPL $23B. Found when the ADBE deep-dive read "EV − market cap" as $2.4B of
+  net debt; with short-term investments included it is $1.1B.
+- **Expected effect:** lower EV/EBITDA for cash-rich names, with the largest
+  moves among mega-caps. The top-5 ranking could shift (META would get
+  cheaper). The 2026-09-27 report's normalized EV/EBITDA has the same issue.
+  This is independent of P1, but best decided together because both change
+  the ranking.
+- **How to verify:** re-run `run_valuation.sh`, then diff `valuation.csv`
+  EV/EBITDA before and after for the 35 names.
+
 ## Roadmap ideas (not scheduled)
 - `scripts/freshness.py`: one-glance data-state table (Phase 1).
 - Run history: snapshot key outputs per run so "what changed" is answerable.

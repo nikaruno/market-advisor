@@ -473,7 +473,7 @@ figure{margin:0}figcaption{font-weight:600;font-size:13.5px;margin-bottom:4px}
 .ref{stroke:var(--axis);stroke-width:1}.band{fill:var(--band)}
 .tick{fill:var(--muted);font-variant-numeric:tabular-nums}.ptitle{fill:var(--ink2);font-size:11.5px}
 .elabel{fill:var(--ink);font-weight:600;font-size:11.5px}.anno{fill:var(--ink2);font-size:10.5px}
-.up{fill:var(--up);font-weight:600}.down{fill:var(--down);font-weight:600}
+.up{fill:var(--up);font-weight:600}.pos{color:var(--up);font-weight:600}.neg{color:var(--down);font-weight:600}.down{fill:var(--down);font-weight:600}
 .ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
 .ln.s1{stroke:var(--s1)}.ln.s2{stroke:var(--s2)}.ln.s3{stroke:var(--s3)}
 .bar.s1,.dot.s1{fill:var(--s1)}.bar.s2,.dot.s2{fill:var(--s2)}.dot.s3{fill:var(--s3)}
