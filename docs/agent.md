@@ -14,6 +14,8 @@ The pipelines produce data; the assistant turns it into answers.
    | valuation (quarterly + spot price) | weekly, or after earnings | > 14 days |
    | technical (daily prices) | on demand | > 3 days |
    Report staleness before analysing; refresh only after asking.
+   The standard sequence for this — freshness check, what to refresh, run
+   order, report — is written up in `docs/default-task.md`.
 
 2. **Analysis and reports.** Ranked tables, cross-pipeline views (cheap AND
    high quality), what changed since the last run, why a company moved, sector
