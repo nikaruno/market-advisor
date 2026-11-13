@@ -17,7 +17,18 @@ retargets it. Run: `prun python3 scripts/freshness.py`.
   zero. Transient, not a rate-limit wall. Different signature from the
   documented NoneType/empty-data throttling.
 
-## Data state (as of 2026-10-19)
+## Data state (as of 2026-11-13)
+- **quality** FRESH by cadence (49.7 days of 90) but **stale in substance**:
+  QCOM reported a September quarter showing a 12.1% TTM EBITDA decline that the
+  annual statements behind its 64.3 score do not contain, and NVDA's 82.2 (the
+  pool's highest) has not seen a 27.5% drawdown. Not refreshed — needs a
+  decision, since a re-run recalibrates every score.
+- **technical** FRESH, rated 2026-11-13 05:07, 133/133, no warnings.
+- **valuation** FRESH, computed 2026-11-13 05:10, 133 rows, no failures.
+- Universe tape split 34/20/11/33/35 (SB/B/N/S/SS); 19 of 33 top-quartile names
+  rate Sell or Strong Sell.
+
+## Previous data state (2026-10-19)
 - **quality** FRESH, not refreshed — still 2026-09-24 13:01, 25.0 days old
   against a 90-day cadence. Next due ~2026-12-23.
 - **technical** FRESH, rated 2026-10-19 11:58, **133 of 133**. Last week's five
@@ -53,6 +64,17 @@ retargets it. Run: `prun python3 scripts/freshness.py`.
 - `freshness.py` reports all three pipelines FRESH for the first time (exit 0).
 
 ## Reports
+- `reports/2026-11-13-cheap-and-high-quality.md` — both price pipelines
+  refreshed. **Two findings worth carrying forward.** (1) **QCOM's trailing P/E
+  of 13.9 is an artefact**: a one-off $5.1bn tax benefit in the 2026-03 quarter
+  put TTM net income at $13.6bn on $9.4bn of TTM pretax income; at a normal tax
+  rate the P/E would be ~25. TTM EBITDA meanwhile fell 12.1% and EV/EBITDA rose
+  14.7 → 17.1. This vindicates ranking on EV/EBITDA rather than P/E, exactly as
+  README.md argues. (2) A broad tech drawdown (NVDA −27.5%, GOOG −12.3%,
+  META −12.1%) **made expensive names cheap by price, not by improvement** —
+  NVDA, CLS and INOD are new to the cheapest ten; APP left it on a +47.9% rally.
+  Also flagged: INOD's 73.0 score sits on cash quality of −0.06 (negative
+  operating cash flow against positive net income), so the score is unreliable.
 - `reports/2026-10-19-cheap-and-high-quality.md` — momentum update; only
   technical was refreshed, so the EV/EBITDA ranking is identical to 10-12.
   **Key finding: the technical ratings whipsaw at weekly sampling.** GOOG has
@@ -78,11 +100,12 @@ retargets it. Run: `prun python3 scripts/freshness.py`.
   all Sell/Strong Sell, while 4 of the 5 most expensive are Strong Buy.
   ADBE and INTU are below all 10 moving averages.
 
-## Git state (as of 2026-10-19)
-`main` is at `6dbe8ad`, two commits ahead of its upstream (not pushed).
-`docs/progress.md` is uncommitted. Reports are git-ignored (`reports/*.md`)
-and live only in the working copy, so commit messages reference findings git
-does not contain.
+## Git state (as of 2026-11-13)
+Branch `progress-1113` holds `b16efde` (the 10-19 progress update) and is not
+merged; `main` is at `6dbe8ad`, two commits ahead of its upstream (not pushed).
+`docs/progress.md` is uncommitted again after this run. Reports are git-ignored
+(`reports/*.md`) and live only in the working copy, so commit messages
+reference findings git does not contain.
 - `reports/2026-09-24-cheap-and-high-quality.md` — **git-ignored**
   (`.gitignore` has `reports/*.md`), so reports live only in the working copy.
 `data/` is git-ignored by design and is not part of any commit.
@@ -92,6 +115,12 @@ Open. All three pipelines fresh; nothing is blocked. The default-task routine is
 in `docs/default-task.md` and was executed end to end on 2026-10-12.
 
 ## Open questions
+- **Earnings-calendar awareness (now biting, needs a decision).** The 90-day
+  quality cadence is a calendar rule, but a company reporting mid-cycle makes
+  its own score stale ahead of schedule. On 11-13 both QCOM and NVDA had
+  materially changed while their scores stayed "FRESH" at 49.7 days. Options:
+  shorten the cadence, track report dates per company, or re-run quality when a
+  name under discussion has reported. Already a roadmap idea in docs/agent.md.
 - **Valuation cadence vs. the EV/EBITDA ranking (needs a decision).** The
   14-day valuation cadence was set for quarterly-statement staleness, but half
   of EV/EBITDA is a spot market cap that goes stale as fast as the technical
