@@ -17,7 +17,18 @@ retargets it. Run: `prun python3 scripts/freshness.py`.
   zero. Transient, not a rate-limit wall. Different signature from the
   documented NoneType/empty-data throttling.
 
-## Data state (as of 2026-10-12)
+## Data state (as of 2026-10-19)
+- **quality** FRESH, not refreshed — still 2026-09-24 13:01, 25.0 days old
+  against a 90-day cadence. Next due ~2026-12-23.
+- **technical** FRESH, rated 2026-10-19 11:58, **133 of 133**. Last week's five
+  timeouts (RKLB, ESLT, ASTS, WWD, GSAT) all recovered, so the partial-coverage
+  gap noted on 10-12 is closed and daily prices now show newest = oldest.
+- **valuation** FRESH but not refreshed — still 2026-10-12 06:26, 7.2 days old
+  against a 14-day cadence.
+- Universe tape deteriorated sharply: Strong Sell 24 → 43, Strong Buy 43 → 20
+  (133 rated). 20 of the 33 top-quartile names now rate Sell or Strong Sell.
+
+## Previous data state (2026-10-12)
 - **quality** FRESH but **not refreshed today** — still the 2026-09-24 13:01
   run, 17.7 days old against a 90-day cadence. Next due ~2026-12-23.
 - **technical** FRESH, rated 2026-10-12 06:18, **128 of 133**. Five timed out
@@ -42,6 +53,15 @@ retargets it. Run: `prun python3 scripts/freshness.py`.
 - `freshness.py` reports all three pipelines FRESH for the first time (exit 0).
 
 ## Reports
+- `reports/2026-10-19-cheap-and-high-quality.md` — momentum update; only
+  technical was refreshed, so the EV/EBITDA ranking is identical to 10-12.
+  **Key finding: the technical ratings whipsaw at weekly sampling.** GOOG has
+  printed a different rating at all three readings (Sell → Strong Buy → Strong
+  Sell) on under 1% cumulative price movement; GRMN went Strong Buy → Sell →
+  Strong Buy. The mechanism is the MA vote: when price sits near its averages a
+  small move flips several of the ten votes at once. This supersedes the 09-24
+  "cheapness and momentum are inversely aligned" finding, which should not have
+  been framed as a finding on one sample.
 - `reports/2026-10-12-cheap-and-high-quality.md` — today's run of the default
   task. Same ten cheapest top-quartile names as 09-24, reordered.
   **Key finding: the 09-24 "cheapness and momentum are inversely aligned"
@@ -58,11 +78,11 @@ retargets it. Run: `prun python3 scripts/freshness.py`.
   all Sell/Strong Sell, while 4 of the 5 most expensive are Strong Buy.
   ADBE and INTU are below all 10 moving averages.
 
-## Git state (as of 2026-10-12)
-`main` is at `029dd27` (the earlier branch was merged and deleted). Branch
-`default-task-doc` holds `9ba0041` — `docs/default-task.md` plus the pointer
-added to `docs/agent.md` — and is not merged. `docs/progress.md` is uncommitted.
-Reports are git-ignored (`reports/*.md`) and live only in the working copy.
+## Git state (as of 2026-10-19)
+`main` is at `6dbe8ad`, two commits ahead of its upstream (not pushed).
+`docs/progress.md` is uncommitted. Reports are git-ignored (`reports/*.md`)
+and live only in the working copy, so commit messages reference findings git
+does not contain.
 - `reports/2026-09-24-cheap-and-high-quality.md` — **git-ignored**
   (`.gitignore` has `reports/*.md`), so reports live only in the working copy.
 `data/` is git-ignored by design and is not part of any commit.
@@ -72,6 +92,16 @@ Open. All three pipelines fresh; nothing is blocked. The default-task routine is
 in `docs/default-task.md` and was executed end to end on 2026-10-12.
 
 ## Open questions
+- **Valuation cadence vs. the EV/EBITDA ranking (needs a decision).** The
+  14-day valuation cadence was set for quarterly-statement staleness, but half
+  of EV/EBITDA is a spot market cap that goes stale as fast as the technical
+  data. On 10-19 the report ranked on week-old multiples while momentum was
+  current; INTU had moved +7.4%, ADP +6.7%, GRMN +6.1% since the snapshot. For
+  reports that rank on a price-derived metric, valuation and technical should
+  arguably refresh together. Raised, not changed — belongs in docs/agent.md.
+- **Momentum sampling interval (possible methodology proposal).** Weekly
+  readings of the technical rating are dominated by noise; a longer interval or
+  a persistence filter would be needed before the label carries information.
 - Refresh cadences in docs/agent.md are a first guess; tune with experience.
 - **The Top-25% quality tier has zero energy/utilities names** (13 software,
   9 semis, 6 electronics, 4 AI, 1 industrial). Pool-wide percentile scoring
