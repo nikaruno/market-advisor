@@ -17,7 +17,42 @@ retargets it. Run: `prun python3 scripts/freshness.py`.
   zero. Transient, not a rate-limit wall. Different signature from the
   documented NoneType/empty-data throttling.
 
-## Data state (as of 2026-11-13)
+## Data state (as of 2026-11-23) — BROKEN, do not report from this
+
+The 2026-11-13 quality re-run **exited 0 but largely failed at stage 2**
+(annual-statement downloads). Of the 133 unique tickers in the rebuilt
+universe, only **27 got fresh statements**; 98 silently fell back to the
+2026-09-24 files already on disk (`download_annual.py` has no skip logic, so
+these are failed downloads, not skips), and 8 new universe members got nothing
+at all. The run log was in the previous session's scratchpad and is gone, so
+the failure mode is inferred from file mtimes; the signature matches the Yahoo
+timeouts seen before.
+
+Consequences:
+- **Quality scores are mixed-vintage.** Only 3 of the 31 top-quartile names
+  (MU, NVDA, AVGO) have 11-13 statements. **QCOM — the name the re-run was
+  meant to fix — was not refreshed**, so its score still predates the
+  12.1% TTM EBITDA decline. Its move from 64.3 to 63.7 is recalibration, not
+  new data.
+- **Pool changed 128 → 121**, so these scores are NOT comparable to the four
+  prior reports.
+- **8 tickers have no statements and so no score**: ADSK, AI, EOG, MRCY, ON,
+  PBR, RXRX, VEEV. Note EOG and PBR are energy — the sector gap may be
+  starting to close, but the downloads failed.
+- **technical and valuation predate the universe rebuild** (both ran 11-13
+  ~05:07, universe rebuilt 05:18). They miss 9 current names and carry 9
+  dropped ones (incl. INOD, which the 11-13 report discussed). Technical is
+  also STALE at 10 days.
+
+**All three pipelines are mutually inconsistent. The fix is to re-run
+`run_quality.sh`, then technical, then valuation — awaiting a decision.**
+
+Process note: the monitor filter used for that run watched for stage markers
+and metric-stage warnings but not stage-2 per-ticker download failures, so the
+failure produced no visible event. Widen the filter to `WARN|failed|curl` on
+future runs.
+
+## Previous data state (2026-11-13, before the failed re-run)
 - **quality** FRESH by cadence (49.7 days of 90) but **stale in substance**:
   QCOM reported a September quarter showing a 12.1% TTM EBITDA decline that the
   annual statements behind its 64.3 score do not contain, and NVDA's 82.2 (the
