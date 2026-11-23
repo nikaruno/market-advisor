@@ -1,0 +1,229 @@
+{
+ "meta": {
+  "started": "2026-09-27T11:40:23",
+  "model": "claude-opus-5-5",
+  "turns": 17,
+  "cost_usd": 1.42,
+  "verified": true,
+  "corrections": [
+   {
+    "field": "means[2]",
+    "original": "At these prices, buybacks retire shares at roughly an 8\u201310% earnings yield.",
+    "corrected": "At these prices, buybacks retire shares at roughly an 8\u201312% earnings yield.",
+    "reason": "The brief's P/E figures imply earnings yields of 1/12.85 \u2248 7.8% on TTM earnings and 1/8.51 \u2248 11.8% on forward earnings. The upper bound of 10% matches neither multiple."
+   }
+  ],
+  "stale": []
+ },
+ "notes": {
+  "name": "Adobe Inc. (ADBE)",
+  "industry": "Software - Application",
+  "research_date": "2026-09-27",
+  "summary": "Data as of 2026-09-25 close / pipelines built 2026-09-26 (all FRESH, 1 day old). Adobe is a high-quality, cash-generative subscription software business (quality score 75.5, 95th percentile of a 129-company pool; FCF margin 39.2%; average ROIC 45.4%). Revenue is still growing at a double-digit rate: +12.9% year on year in the quarter to 2026-08-31, and the company raised its FY2026 targets on 2026-09-10. Even so, it trades at **EV/EBITDA 9.3x, P/E 12.9x TTM and 8.5x forward**. That is the cheapest of the chosen software peers. The stock is down 34.7% over one year and rated Strong Sell by the technical pipeline. The market is pricing in lasting damage from generative AI to the Creative Cloud seat model, on top of a leadership change: a new CEO starts 2026-12-01 and the head of the creative business has left. The central question is whether that damage is real (a value trap) or overstated. The operating data show only early signs: operating income and net income are growing more slowly than revenue. EPS growth also relies heavily on buybacks, which exceeded free cash flow in FY2025.",
+  "business": {
+   "summary": "Adobe sells subscription software for creativity (Creative Cloud: Photoshop, Premiere, Illustrator, Firefly generative AI), document productivity (Acrobat and Document Cloud) and customer-experience management for enterprises (Experience Platform, analytics, commerce). Almost all revenue is subscription-based. From fiscal 2026, Adobe reports a single operating segment and discloses revenue by customer group: Creative & Marketing Professionals, and Business Professionals & Consumers. The segment figures below are therefore the last three-segment split, for FY2025.",
+   "key_points": [
+    "Q3 FY2026 (quarter ended 2026-08-28): revenue $6.76B (+13% y/y), GAAP EPS $4.62, non-GAAP EPS $6.13, total ARR $27.50B, RPO $22.16B (67% current). Source: Q3 FY26 press release (8-K), 2026-09-10.",
+    "Customer-group subscription revenue in Q3 FY26: Creative & Marketing Professionals $4.65B (+13%); Business Professionals & Consumers $1.91B (+16%). Source: same press release.",
+    "Updated FY2026 targets: revenue $26.576\u201326.626B, GAAP EPS $18.12\u201318.17, non-GAAP EPS $24.45\u201324.50, ARR growth 10.2%. Q4 targets: revenue $6.80\u20136.85B, GAAP EPS $4.65\u20134.70. Source: 8-K, 2026-09-10.",
+    "Adobe says AI-first ARR exceeded $650M, up more than 150% y/y. This is a company-defined metric and is small next to total ARR of $27.5B.",
+    "Segment reporting changed to a single segment from Q1 FY2026 (FY2025 10-K). This makes it harder to track the enterprise Digital Experience business separately from the creative business.",
+    "Capital return: $24.55B remained under the April 2026 repurchase authorization (runs through 2030-04-30). About 9.5M shares were repurchased in Q3. No dividend. Source: Q3 FY26 10-Q."
+   ],
+   "segments": [
+    {
+     "name": "Digital Media (Creative Cloud, Document Cloud)",
+     "revenue_usd": 17649000000,
+     "yoy_growth": 0.113
+    },
+    {
+     "name": "Digital Experience",
+     "revenue_usd": 5864000000,
+     "yoy_growth": 0.093
+    },
+    {
+     "name": "Publishing and Advertising",
+     "revenue_usd": 256000000,
+     "yoy_growth": -0.069
+    }
+   ],
+   "segments_period": "Fiscal year 2025 (ended 2025-11-28). This is the last year of three-segment reporting; the segments sum to total revenue of $23.769B.",
+   "segments_source": {
+    "src": "Adobe Inc. Form 10-K for FY2025 (SEC EDGAR), cross-checked with the Q4 FY2025 earnings release (8-K, 2025-12-10)",
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+    "date": "2025-11-28 (fiscal year end; 10-K filed January 2026)"
+   }
+  },
+  "technical_note": "Technical pipeline, last bar 2026-09-25: rating **Strong Sell** (score 21.9), RSI(14) 36.6, which is weak but not oversold. The close of $235.47 is below both the 50-day SMA ($257.42) and the 200-day SMA ($262.68), so the trend is down. Returns: 1 month -13.9%, 3 months +16.2%, 1 year -34.7%. The price is 21.7% above the one-year low of $193.41 (2026-06-25) and 34.7% below the one-year high of $360.37 (2025-09-26). The June-to-August rebound has largely reversed in September. That month included the CEO-succession announcement (2026-09-03), a senior executive departure and the Q3 results (2026-09-10). I could not verify from a primary source why the stock kept falling after the raised guidance.",
+  "financials_note": "Quality and valuation pipelines, as of 2026-09-26; annual data to FY2025-11-30, quarterly data to 2026-08-31.\n\n**Growth:** Revenue rose from $17.61B (FY22) to $23.77B (FY25), a 10.5% CAGR. The latest quarter grew 12.9% y/y ($6.76B vs $5.99B), and TTM revenue is about $25.97B.\n\n**Margins:** Gross margin is about 89% (FY25). Operating margin was 36.6% in FY25, but Q3 FY26 operating margin was 34.8% vs 36.3% a year earlier. Q3 operating income rose only 8.3% and net income only 3.1% y/y, against 12.9% revenue growth.\n\n**Cash:** FY25 operating cash flow was $10.03B, capex $0.18B and FCF $9.85B. The pipeline's FCF margin is 39.2%. CFO/NI is 1.43; stock-based compensation is a large add-back, and this metric scored only 48.8 in the pool.\n\n**Capital return:** Buybacks were $11.28B in FY25 (above FCF) and $9.50B in FY24. Diluted shares fell from 471M to 427M (-9.3%) over FY22\u2013FY25.\n\n**Balance sheet:** Total debt rose from $4.08B (FY23) to $6.65B (FY25) and was $6.76B at 2026-08-31, with $5.64B of cash and short-term investments. That is **net debt of $1.12B**, about 0.11x TTM normalized EBITDA of $10.27B. Leverage is low, but the company has moved from net cash to net debt.\n\n**Distortions:** P/B of 7.96 and the 45% ROIC are inflated by equity shrunk through buybacks. FY24 earnings are depressed by the Figma termination fee (see flag).",
+  "peers": [
+   "CRM",
+   "INTU",
+   "NOW",
+   "CDNS"
+  ],
+  "peer_caveat": "All four peers come from the screened universe, and none is a direct competitor across Adobe's core creative franchise. The most important real competitors are missing: **Canva** (private), **Figma** (listed in 2025 but not in the universe), **Microsoft** (Copilot/Designer, Office documents vs Acrobat) and **Alphabet/Google** (generative image and video models). Generative-AI model vendors such as OpenAI and Midjourney are private. For the Digital Experience business, Oracle, SAP and HubSpot are not in the chosen set; Salesforce is the only direct DX competitor included. The pool is 129 companies, so these are same-industry comparables rather than a true competitive set.",
+  "peer_note": "Against CRM, INTU, NOW and CDNS, Adobe has the strongest profitability and the lowest multiples. Its growth is middling and its momentum is poor.\n\n**Returns and cash:** Adobe's average ROIC (45.4%) is far above CDNS (25.2%), INTU (17.1%), NOW (10.0%) and CRM (8.3%). Part of that reflects buyback-reduced equity rather than pure economics. Its FCF margin (39.2%) is the highest of the group (INTU 35.4%, NOW 32.1%, CRM 31.5%, CDNS 28.6%).\n\n**Growth:** Adobe's 10.5% revenue CAGR is ahead only of CRM (9.8%) and behind INTU (14.3%), CDNS (14.1%) and NOW (22.4%). Its latest-quarter growth of 12.9% beats CRM (10.8%), roughly matches INTU (13.7%), and is about half that of NOW (24.0%) and CDNS (24.2%).\n\n**Balance sheet:** Adobe is conservatively financed. The pipeline shows net debt/EBITDA of -0.06x; on latest-quarter data it is about +0.11x. CRM and INTU are at about 0.6x, while NOW (-0.06x) and CDNS (-0.13x) hold net cash.\n\n**Valuation:** Adobe's EV/EBITDA of 9.3x is below INTU (10.9x) and CRM (13.6x) and a fraction of NOW (41.8x) and CDNS (40.0x). The same holds for P/E: 12.9x TTM and 8.5x forward, vs INTU 16.1x/10.2x and CRM 19.9x/14.6x.\n\n**Momentum:** Adobe's 1-year return of -34.7% is better only than INTU (-60.1%) and worse than NOW (-27.6%), CDNS (-6.9%) and CRM (-3.1%). ADBE and INTU are the only two rated Strong Sell; the other three are rated Buy.\n\n**The case for Adobe over the peers:** the same or better cash generation at the lowest price, with buybacks compounding per-share value at these multiples.\n\n**The case against:** the market is treating both ADBE and INTU as AI-disruption candidates whose current cash flows may not persist. NOW and CDNS earn their premiums through faster growth and AI-beneficiary positioning. A low multiple on a business with shrinking relevance is the classic value-trap setup, and Adobe's slowing net-income growth and management turnover do not yet rule that out.",
+  "scenarios": {
+   "metric_label": "GAAP diluted EPS (FY2026 company guidance midpoint; scenarios = next-fiscal-year EPS)",
+   "current_value_per_share": 18.15,
+   "basis_note": "Base metric: midpoint of Adobe's FY2026 GAAP EPS guidance of $18.12\u201318.17 (8-K, 2026-09-10). Only one quarter remains, so this is close to trailing earnings and consistent with the brief's TTM P/E of 12.85. I used GAAP rather than non-GAAP ($24.45\u201324.50) because non-GAAP excludes stock-based compensation, which is a real and material cost at Adobe. The brief's forward P/E of 8.51 appears to rest on a higher, probably non-GAAP consensus estimate whose basis is not stated. Multiples come from Adobe's own current TTM and forward P/E and from peer TTM P/Es in the brief. The brief contains no multi-year multiple history. These scenarios are illustrative, not forecasts.",
+   "items": [
+    {
+     "name": "Bear",
+     "per_share_value": 17,
+     "multiple": 9,
+     "rationale": "EPS falls about 6%. Generative-AI tools (Canva, Figma, model vendors) erode Creative Cloud seats and pricing, and revenue growth slows to low single digits. AI compute costs and stock-based compensation push GAAP operating margin down 2\u20133 points; Q3 FY26 was already 34.8% vs 36.3% a year earlier. Buybacks only partly offset this. Multiple of 9x is roughly Adobe's current forward P/E (8.51x), meaning the market keeps pricing Adobe as an ex-growth franchise in decline."
+    },
+    {
+     "name": "Base",
+     "per_share_value": 20,
+     "multiple": 13,
+     "rationale": "EPS grows about 10%. Revenue grows about 10%, in line with the company's guided 10.2% ARR growth. Operating margin is flat around 35\u201336%, and buybacks cut the share count by about 3\u20134%. Multiple of 13x is close to the current TTM P/E of 12.85: no re-rating either way while the AI debate and the CEO transition play out."
+    },
+    {
+     "name": "Bull",
+     "per_share_value": 21.5,
+     "multiple": 18,
+     "rationale": "EPS grows about 18%. Revenue grows 12\u201313%, sustaining Q3's 12.9% y/y pace as AI-first products (ARR above $650M, +150%) monetise across the base. Operating margin recovers toward FY25's 36.6%, and buybacks continue at pace. Multiple of 18x sits between INTU (16.1x TTM) and CRM (19.9x TTM), well below NOW and CDNS. It assumes the market stops treating Adobe as an AI loser, but not that it gets a growth premium."
+    }
+   ]
+  },
+  "risks": [
+   {
+    "risk": "Generative-AI disruption of the Creative Cloud seat model",
+    "detail": "Adobe's 10-K risk factors cite competition, including from AI-native products, and the difficulty of implementing and monetising generative AI. If AI lowers the skill needed for creative work, fewer professional seats and lower price points could follow. The market appears to price this already (P/E 12.9x TTM, 1-year return -34.7%). Reported results do not yet show it in revenue (+12.9% y/y), but they may show it in margins.",
+    "src": "Adobe Inc. Form 10-K FY2025, Risk Factors (SEC)",
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm"
+   },
+   {
+    "risk": "Leadership transition and executive turnover",
+    "detail": "Anil Chakravarthy, who runs the Customer Experience Orchestration business and worldwide field operations, becomes CEO on 2026-12-01. Shantanu Narayen moves to Executive Chair after 18 years as CEO. David Wadhwani, head of the creativity and productivity business, announced his departure around 2026-09-04; that report comes from an aggregator citing his LinkedIn post. The change happens at a moment of strategic pressure on the creative franchise.",
+    "src": "Adobe newsroom press release (2026-09-03); Yahoo Finance (aggregator, 2026-09-04) for the Wadhwani departure",
+    "url": "https://news.adobe.com/news/2026/09/adobe-announces-anil-chakravarthy-to-become-president-and-ceo"
+   },
+   {
+    "risk": "Subscription-practice regulation (DOJ/ROSCA injunction)",
+    "detail": "On 2026-03-13 Adobe settled the DOJ lawsuit, referred by the FTC, over early-termination fees and cancellation friction: $75M civil penalty plus $75M in free services. The injunction requires clear disclosure of early-termination fees, reminders before free trials convert, and easy cancellation. Churn could rise at the margin. Adobe denies wrongdoing.",
+    "src": "U.S. Department of Justice, Office of Public Affairs press release",
+    "url": "https://www.justice.gov/opa/pr/adobe-agrees-150-million-settlement-and-injunction-resolve-alleged-violations-restore-online"
+   },
+   {
+    "risk": "Profit growth lagging revenue growth",
+    "detail": "In the quarter to 2026-08-31, revenue grew 12.9% y/y, while operating income grew 8.3% and net income only 3.1%. Operating margin was 34.8% vs 36.3%. If AI compute and go-to-market costs keep rising, EPS growth will depend increasingly on buybacks. Figures are from the brief's quarterly statements; headline revenue matches the Q3 press release.",
+    "src": "market-advisor valuation pipeline (quarterly statements to 2026-08-31); Adobe Q3 FY26 press release (8-K, 2026-09-10)",
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+   },
+   {
+    "risk": "Buybacks funded beyond free cash flow; balance sheet has moved to net debt",
+    "detail": "FY25 buybacks of $11.28B exceeded FCF of $9.85B. Total debt rose from $4.08B (FY23) to $6.76B (2026-08-31), and the latest quarter shows net debt of $1.12B against net cash earlier. $24.55B of repurchase authority remains. The Q3 10-Q shows $1.60B of debt classified as current, including notes due 2027. Leverage is still low, about 0.11x EBITDA. The risk is that per-share growth is being bought rather than earned.",
+    "src": "Adobe Q3 FY2026 Form 10-Q (SEC); market-advisor quality/valuation pipelines",
+    "url": "https://www.sec.gov/Archives/edgar/data/0000796343/000079634326000156/adbe-20260828.htm"
+   },
+   {
+    "risk": "Reduced disclosure after segment consolidation",
+    "detail": "From Q1 FY2026, Adobe reports a single segment instead of Digital Media / Digital Experience / Publishing & Advertising. Investors can no longer see directly whether the enterprise Digital Experience business (FY25 $5.86B, +9%) is slowing. Weakness in one area could therefore be masked by the other.",
+    "src": "Adobe Inc. Form 10-K FY2025 (SEC)",
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm"
+   }
+  ],
+  "catalysts": [
+   {
+    "when": "2026-11-10 to 2026-11-12",
+    "event": "Adobe MAX 2026 (Miami Beach)",
+    "detail": "Annual creativity conference and Adobe's main product-launch venue: Firefly models, AI features in Creative Cloud, and partner model integrations. It is an important checkpoint for the AI-monetisation narrative and the first major event before the CEO handover.",
+    "confirmed": true,
+    "src": "Adobe MAX official site",
+    "url": "https://max.adobe.com/"
+   },
+   {
+    "when": "2026-12-01",
+    "event": "CEO transition takes effect",
+    "detail": "Anil Chakravarthy becomes President and CEO and joins the Board; Shantanu Narayen becomes Executive Chair.",
+    "confirmed": true,
+    "src": "Adobe newsroom press release, 2026-09-03",
+    "url": "https://news.adobe.com/news/2026/09/adobe-announces-anil-chakravarthy-to-become-president-and-ceo"
+   },
+   {
+    "when": "Mid-December 2026 (expected; the Q4 FY2025 report came on 2025-12-10)",
+    "event": "Q4 FY2026 results and FY2027 targets",
+    "detail": "The first annual targets issued under the new CEO. Against Q4 guidance of revenue $6.80\u20136.85B and GAAP EPS $4.65\u20134.70, the key items are the FY2027 revenue, ARR and margin outlook. The date has not been announced by the company.",
+    "confirmed": false,
+    "src": "Adobe Q3 FY26 press release (8-K) for Q4 targets; Q4 FY25 press release (8-K, 2025-12-10) for the timing precedent",
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+   },
+   {
+    "when": "Within 12 months of 2026-08-28 (2027)",
+    "event": "Senior notes maturities (2.15% and 4.85% notes due 2027)",
+    "detail": "The Q3 10-Q shows $1.60B of debt classified as current. This is manageable against $5.64B of cash and short-term investments. Whether Adobe refinances or repays will show its balance-sheet posture alongside heavy buybacks. The exact maturity months were not verified.",
+    "confirmed": true,
+    "src": "Adobe Q3 FY2026 Form 10-Q (SEC)",
+    "url": "https://www.sec.gov/Archives/edgar/data/0000796343/000079634326000156/adbe-20260828.htm"
+   }
+  ],
+  "says": [
+   "Quality is top-tier: score 75.5, 95.3rd percentile of 129 scored companies, 100% data completeness over 4 years. Average ROIC is 45.4% and FCF margin 39.2%, the highest FCF margin among all peer candidates in the brief.",
+   "Growth is steady but not fast: 10.5% revenue CAGR over FY22\u2013FY25 and +12.9% y/y in the latest quarter. In that quarter operating income grew only 8.3% and net income 3.1%.",
+   "Valuation is the lowest among the chosen peers: EV/EBITDA 9.3x (normalized 9.35x), P/E 12.85x TTM and 8.51x forward, vs INTU 10.9x / 16.1x and CRM 13.6x / 19.9x.",
+   "The price trend is negative: close $235.47 (2026-09-25), below the 50-day ($257.42) and 200-day ($262.68) averages, down 34.7% over one year and 13.9% over one month. Technical rating is Strong Sell.",
+   "Capital return is aggressive: FY25 buybacks of $11.28B exceeded FCF of $9.85B. Diluted shares fell 9.3% over three years. Latest-quarter net debt is $1.12B."
+  ],
+  "means": [
+   "The market is valuing Adobe less as a compounder than as a franchise at risk of AI disruption. A P/E around 13x TTM implies low or no long-run growth for a business still growing revenue by double digits.",
+   "The gap between revenue growth (12.9%) and net-income growth (3.1%) may be the first sign of AI costs or competitive spending compressing margins. If it persists, the low multiple partly reflects reality.",
+   "At these prices, buybacks retire shares at roughly an 8\u201312% earnings yield. That supports per-share growth if the core business holds, but it amplifies losses if it does not.",
+   "Leadership change is a double-edged catalyst. The new CEO comes from the enterprise and customer-experience side, not the creative side, and the creative business lead has departed. That could signal a strategic reset or add execution risk right when the creative franchise is under the most pressure.",
+   "Among these peers, Adobe offers the most cash per dollar of market value. NOW and CDNS offer faster growth, and the market is paying a large premium for that growth and perceived AI-beneficiary status."
+  ],
+  "uncertain": [
+   "**Value-trap risk is live.** Low multiples, falling price and slowing profit growth are exactly what a durable decline in the creative seat base would look like early on. Revenue has not yet shown it, but subscription businesses tend to show damage in revenue with a lag.",
+   "The profitability metrics are flattered. ROIC of 45% and P/B of 7.96 are inflated by equity shrunk through buybacks, and FY24 earnings are depressed by the $1B Figma fee, which overstates the FY24\u2192FY25 EPS jump (+35%).",
+   "Net-debt figures conflict. The quality pipeline shows net cash (net debt/EBITDA -0.06x), while latest-quarter data show net debt of $1.12B. The brief's total debt ($6.76B) also differs from the 10-Q's total notes figure ($6.36B), possibly because of leases or other items. Leverage is low on any measure.",
+   "Peer comparisons are imperfect. Adobe's closest creative competitors (Canva, Figma, Microsoft, Google) are not in the universe, so 'cheapest among peers' compares Adobe with different businesses. Quality scores are pool-relative percentiles over only 129 companies.",
+   "Company-defined AI metrics (AI-first ARR above $650M) are unaudited and small relative to $27.5B total ARR. They show adoption, not whether AI adds to or cannibalises the core subscription base.",
+   "The counter-case to the bear view: revenue growth accelerated from about 10% in FY25 to 12.9% in the latest quarter, guidance was raised, and RPO is $22.16B. The sell-off may be sentiment-driven. The technical pipeline cannot distinguish the two."
+  ],
+  "news": [
+   {
+    "date": "2026-09-10",
+    "text": "Q3 FY2026 results: record revenue of $6.76B (+13% y/y), GAAP EPS $4.62, non-GAAP EPS $6.13, total ARR $27.50B, RPO $22.16B. FY2026 targets raised to revenue $26.576\u201326.626B, GAAP EPS $18.12\u201318.17 and non-GAAP EPS $24.45\u201324.50.",
+    "src": "Adobe Q3 FY2026 earnings press release, Form 8-K Exhibit 99.1 (SEC)",
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+   },
+   {
+    "date": "2026-09-04",
+    "text": "David Wadhwani, who led Adobe's creativity and productivity business for nearly five years, announced his departure. This is an aggregator report citing his LinkedIn post; no primary Adobe filing was checked.",
+    "src": "Yahoo Finance (aggregator)",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/adobe-shares-fall-ceo-succession-094434793.html"
+   },
+   {
+    "date": "2026-09-03",
+    "text": "Adobe named Anil Chakravarthy, President of Customer Experience Orchestration and worldwide field operations, as President and CEO effective 2026-12-01. Shantanu Narayen becomes Executive Chair.",
+    "src": "Adobe newsroom press release",
+    "url": "https://news.adobe.com/news/2026/09/adobe-announces-anil-chakravarthy-to-become-president-and-ceo"
+   },
+   {
+    "date": "2026-03-13",
+    "text": "Adobe agreed to a $150M settlement with the DOJ ($75M civil penalty plus $75M in free services) and an injunction over early-termination-fee disclosure and cancellation practices under ROSCA. Adobe denies wrongdoing.",
+    "src": "U.S. Department of Justice press release",
+    "url": "https://www.justice.gov/opa/pr/adobe-agrees-150-million-settlement-and-injunction-resolve-alleged-violations-restore-online"
+   },
+   {
+    "date": "2026-03-12",
+    "text": "Shantanu Narayen announced he would step down as CEO once a successor was named.",
+    "src": "Adobe press release via Business Wire",
+    "url": "https://www.businesswire.com/news/home/20260312777904/en/Shantanu-Narayen-Announces-Decision-to-Transition-as-Adobes-CEO-Once-Successor-is-Named"
+   }
+  ],
+  "flag": "**EBITDA:** TTM reported EBITDA ($10.307B) and normalized EBITDA ($10.267B) differ by only 0.39%, so the TTM multiples are not distorted. In **FY2024**, however, reported EBITDA of $7.957B is about 11% below normalized ($8.939B). That matches the **$1B Figma merger-termination fee** Adobe recorded in fiscal 2024 (FY2024 10-K and Q1 FY24 filings). The fee also depresses FY24 net income ($5.56B) and EPS ($12.36), so FY24\u2192FY25 EPS growth (+35%) overstates underlying growth. The pipeline's EBITDA CAGR (12.05%) uses reported figures and is barely affected, because the endpoints are FY22 and FY25.\n\n**Other distortions:** (1) The quality pipeline's net debt/EBITDA of -0.06x (net cash) conflicts with latest-quarter net debt of $1.12B; use the latter. (2) ROIC of 45% and P/B of 7.96 are inflated by buyback-reduced equity. (3) Market cap uses about 397.5M implied shares vs 413M reported at FY-end, reflecting continued buybacks. (4) The forward P/E of 8.51 likely rests on a non-GAAP consensus estimate that excludes stock-based compensation.",
+  "unverified": [
+   "CFO Dan Durn's reported exit in June 2026 appears only in an aggregator article (Yahoo Finance, 2026-09-04); no primary Adobe filing was checked.",
+   "The reported Morgan Stanley downgrade to Underweight on AI-competition concerns comes from an aggregator only.",
+   "Why the stock declined after the 2026-09-10 results despite raised guidance: no primary source found.",
+   "Exact maturity months and amounts of the 2.15% and 4.85% notes due 2027. The 10-Q confirms only the note series and $1.60B of current debt.",
+   "Why the brief's total debt ($6.76B) differs from the 10-Q's total debt ($6.36B); possibly lease liabilities.",
+   "The date of the Q4 FY2026 earnings release has not yet been announced by Adobe.",
+   "The basis of the brief's forward P/E (8.51): which EPS estimate and period."
+  ]
+ }
+}
