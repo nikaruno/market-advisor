@@ -1,0 +1,233 @@
+{
+ "news_checked": "2026-11-23 (company IR and SEC filings; every item below links to a primary source)",
+ "distortion_note": "<p style=\"margin:6px 0 0\">Normalized EBITDA is Yahoo's own row, which strips unusual items such as gains on securities. This report recomputes EV/EBITDA on it using the same EV as the pipeline (market cap + latest-quarter debt − cash). <b>10 of the 114 names with usable EBITDA have a gap above 10%.</b> The ranking change matters: on reported EBITDA, GOOG would be the fourth-cheapest name in the tier at 10.5×, but 68% of its reported TTM EBITDA is unusual items, so it is really 17.6× — tenth, and above the pool median. CRM stays in the top five but at 13.9×, not the 10.98× the pipeline shows.</p>",
+ "overview_note": "<p class=\"note\"><b>Read the whole list in the context of a severe, market-wide drawdown.</b> 72 of the 126 scored companies rate Strong Sell, the median name is 29% below its 1-year high, and <b>all five picks below rate Strong Sell</b> — including NVDA at RSI 15, the most oversold reading in the pool. Nothing here became cheap because a business improved; these multiples fell because prices fell, in some cases while revenue was still accelerating. That makes this a list of candidates for research, not a list of conclusions.<br><br>Two structural caveats carry over from every prior run. The tier is <b>sector-skewed</b> — 15 software, 9 semiconductors, 5 electronics, 2 AI, 1 defense, and <i>no energy or utilities</i> — because pool-wide percentile scoring rewards asset-light, high-ROIC businesses. And the pool is <b>126 companies, changed again from 121 and 128 in earlier runs</b>, so these percentile scores are not comparable with previous reports.</p>",
+ "method_notes": "<ul><li><b>Quality</b>: six-metric 0–100 score (ROIC 25%, FCF margin 20%, cash quality 15%, leverage 15%, EBITDA growth 15%, revenue growth 10%), each metric percentile-ranked across the whole pool, from the annual-statement pipeline. <b>Growth is ranked on amplitude, not durability</b> — a company at a cyclical peak scores highly for the same reason it is about to disappoint. MU below is the clearest live example.</li><li><b>EV/EBITDA (norm.)</b>: computed in this report from the quarterly statements, on Normalized TTM EBITDA. The pipeline's own ranking uses reported EBITDA and is shown alongside.</li><li><b>Technical</b>: a vote of 10 moving averages and 6 oscillators — momentum only, never a quality judgement. Earlier runs in this project showed these labels flipping between Strong Buy and Strong Sell on sub-1% price moves, so treat them as context, not signal.</li><li><b>Blank ratios stay blank.</b> A loss-maker gets no P/E and no EV/EBITDA rather than an estimate.</li><li>Forward P/E is an analyst consensus, moves, and is not TTM.</li></ul>",
+ "companies": {
+  "MU": {
+   "name": "Micron Technology, Inc.",
+   "industry": "Semiconductors — DRAM, NAND and HBM memory",
+   "peers": [
+    "NVDA",
+    "QCOM",
+    "ON",
+    "NXPI",
+    "AMAT"
+   ],
+   "peer_caveat": "Micron's direct memory competitors — Samsung, SK Hynix, Kioxia — are not in the screened universe, because it is filtered to companies reporting in USD. The peers shown are the nearest US-listed semiconductor names, none of which is a memory maker.",
+   "peer_note": "Micron is the cheapest name in the entire top-quality tier at <b>5.9× normalized EV/EBITDA</b>, less than half the next semiconductor (ON at 11.4×) and well under NVDA's 13.5×. It also carries the <b>highest quality score in the pool (83.7)</b>. But the comparison is misleading in a specific way: its multiple is low because its trailing EBITDA of <b>$109B</b> is a cycle peak, while ON, NXPI and QCOM are priced off mid-cycle or depressed earnings. Micron's ROIC of 35% is below NVDA's 59% and its FCF margin of 18% is the lowest of this peer set despite record profits, because the cash is going into fab capacity. Against its peers, Micron is not a better business trading cheaper — it is a far more cyclical business at the top of its cycle.",
+   "flag": "<b>Peak-cycle warning:</b> Micron's FY2026 revenue was $133.2B against $37.4B the year before, with DRAM average selling prices up roughly 180% and a Q4 gross margin of 86.8%. A 5.9× multiple on those earnings is not a cheap business — it is a normal multiple on earnings that the memory cycle has never sustained. Both the numerator and the denominator move together when ASPs turn.",
+   "says": [
+    "Quality 83.7 — the highest score of the 126 companies scored — on 35% ROIC, 2.83 cash quality (CFO nearly 3× net income) and low leverage (net debt/EBITDA 0.27).",
+    "Cheapest in the tier: 5.9× normalized EV/EBITDA (reported identical, no unusual-item distortion), trailing P/E 7.9, forward P/E 2.85.",
+    "FY2026 (ended 2026-09-03): revenue $133.19B vs $37.38B, GAAP net income $84.97B ($74.33/share), operating cash flow $89.68B vs $17.53B.",
+    "Latest quarter revenue +379% year on year; 4-year revenue CAGR 105%, EBITDA CAGR 253%.",
+    "Price +187% over 12 months but <b>51% below its high</b>; Strong Sell, RSI 30."
+   ],
+   "means": [
+    "The market is pricing a cycle top, not a cheap compounder. A stock that has nearly tripled in a year and then halved, on record earnings, is the signature of a commodity peak being discounted forward.",
+    "A forward P/E of 2.85 means consensus still models earnings rising from here. That and a −51% drawdown cannot both be right; one of the two is wrong, and the report cannot tell you which.",
+    "The quality score is doing something misleading here. It is built substantially on 105% revenue and 253% EBITDA growth percentiles — i.e. on cycle amplitude. The screen rewards the very volatility that makes the earnings base unreliable."
+   ],
+   "uncertain": [
+    "<b>Where the cycle actually is.</b> An 86.8% gross margin on a commodity product has no precedent as a steady state, but nothing in this data says whether ASPs roll over next quarter or in two years.",
+    "<b>How much HBM changes the cyclicality.</b> Micron argues high-bandwidth memory is a structurally better business with contracted pricing; that claim cannot be tested from these statements.",
+    "<b>Capital intensity.</b> FCF margin is only 18% on record profits because of fab spending. If ASPs fall while the capex is committed, free cash flow turns quickly.",
+    "Scored on annual statements to FY2026 (2026-09-03). Nothing after that date is in the quality score."
+   ],
+   "news": [
+    {
+     "date": "2026-09-03",
+     "text": "FY2026 (ended 3 Sep 2026): revenue $133.19B versus $37.38B the prior year; GAAP net income $84.97B, or $74.33 per diluted share; operating cash flow $89.68B versus $17.53B. DRAM revenue $100.68B versus $28.58B, with DRAM sales up 252% on an approximate 180% increase in average selling prices and a mid-20% increase in bit shipments.",
+     "src": "Micron FY2026 Form 10-K (SEC)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0000723125/000072312526000023/mu-20260903.htm"
+    },
+    {
+     "date": "2026-09-03",
+     "text": "Q4 FY2026: revenue $54.229B at an 86.8% gross margin.",
+     "src": "Micron Q4 FY2026 8-K Ex. 99.1 (SEC)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0000723125/000072312526000018/a2026q4ex991-pressrelease.htm"
+    }
+   ]
+  },
+  "ADBE": {
+   "name": "Adobe Inc.",
+   "industry": "Software — Application (creative, document and marketing software)",
+   "peers": [
+    "INTU",
+    "CRM",
+    "MSFT",
+    "ADSK"
+   ],
+   "peer_caveat": "Adobe's most direct competitive threats — Canva, Figma and standalone generative-AI image and video tools — are not in the screened universe. The peers shown are the nearest large application-software names that are.",
+   "peer_note": "Adobe remains the cheapest software name in the tier at <b>8.5× normalized EV/EBITDA</b> and a <b>7.9× forward P/E</b>, against 9.6× for INTU, 13.9× for CRM, 16.7× for MSFT and 20.5× for ADSK. It also has the highest ROIC (45%) and FCF margin (39%) of that set and the only net-cash balance sheet. Its latest-quarter revenue growth of +13% is in line with INTU (+12%) and CRM (+11%) and behind MSFT (+19%). So the discount is not explained by weaker current numbers — the market is pricing a risk that has not yet appeared in the statements. The case for Adobe over these peers is that you pay the least for the highest returns on capital; the case against is that the peers' franchises are seen as less directly substitutable by generative AI.",
+   "says": [
+    "Quality 75.9 on 45% ROIC and a 39% FCF margin, with net cash (net debt/EBITDA −0.06).",
+    "8.5× normalized EV/EBITDA — reported and normalized agree, so no unusual-item distortion. Trailing P/E 11.6, forward P/E 7.9.",
+    "Q3 FY2026 (ended 2026-08-28): record revenue $6.76B, +13% year on year (+12% constant currency).",
+    "FY2026 guidance $26.576–26.626B revenue; Q4 guidance $6.80–6.85B with non-GAAP EPS $6.30–6.35.",
+    "Price −33% over 12 months and <b>39% below its high</b>; Strong Sell, RSI 31."
+   ],
+   "means": [
+    "The gap between the fundamentals and the price is the whole thesis. Revenue is still compounding at low double digits with 45% returns on capital, and the stock is priced at under 8× forward earnings.",
+    "Four consecutive reports in this project have called Adobe the clearest value-trap candidate in the tier, and over that span the price has continued to fall while the reported numbers held up. That is consistent either with a market seeing something the statements do not yet show, or with a de-rating that has overshot.",
+    "Of the five names here, Adobe is the one whose cheapness is least explained by the general drawdown: it was already the cheapest in the tier on 2026-09-24, before this sell-off."
+   ],
+   "uncertain": [
+    "<b>Whether generative AI erodes Creative Cloud pricing power</b>, and on what timescale. This is the entire bear case and it is not measurable in trailing statements.",
+    "<b>Seat-based exposure.</b> Revenue is predominantly per-seat subscription; a tool that makes individual creators more productive can reduce seat counts even as it raises output.",
+    "11% four-year revenue CAGR is the slowest of these five picks, so there is little growth cushion if pricing comes under pressure.",
+    "FY2026 is not yet complete — Q4 ends in late November and had not been reported when this ran."
+   ],
+   "news": [
+    {
+     "date": "2026-09-11",
+     "text": "Q3 FY2026 (quarter ended 28 Aug 2026): record revenue $6.76B, up 13% year on year and 12% in constant currency. Q4 FY2026 targets: total revenue $6.80–6.85B, GAAP EPS $4.65–4.70, non-GAAP EPS $6.30–6.35. FY2026 targets: revenue $26.576–26.626B.",
+     "src": "Adobe Q3 FY2026 8-K Ex. 99.1 (SEC)",
+     "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+    },
+    {
+     "date": "2026-08-28",
+     "text": "Form 10-Q for the quarter ended 28 August 2026.",
+     "src": "Adobe Form 10-Q (SEC)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0000796343/000079634326000156/adbe-20260828.htm"
+    }
+   ]
+  },
+  "INTU": {
+   "name": "Intuit Inc.",
+   "industry": "Software — Application (tax, accounting, consumer finance)",
+   "peers": [
+    "ADBE",
+    "CRM",
+    "ADP",
+    "MSFT"
+   ],
+   "peer_caveat": "Intuit's closest competitors in payroll and small-business accounting (Paychex, Xero, H&R Block, Paycom) are not in the screened universe; ADP is the nearest comparable that is.",
+   "peer_note": "Intuit is the second-cheapest software name at <b>9.6× normalized EV/EBITDA</b> and a 10.2× forward P/E, between ADBE (8.5×) and CRM (13.9×), and far below ADP (17.4×) — the closest thing to a direct competitor in the universe. Its 35% FCF margin and 1.81 cash quality are strong, but its <b>17% ROIC is less than half ADBE's 45% and under a third of ADP's 57%</b>, which is the clearest signal that years of acquisitions have inflated invested capital without commensurate returns. Its drawdown is also the worst of the five picks at −59%, deeper than the −29% pool median, so either the market is repricing something Intuit-specific or the sell-off has been indiscriminate.",
+   "says": [
+    "Quality 71.7 on a 35% FCF margin and 1.81 cash quality (CFO 1.8× net income); ROIC 17%; net debt/EBITDA 0.62.",
+    "9.6× normalized EV/EBITDA versus 10.1× reported — one of the few names where normalized EBITDA is <i>higher</i> than reported, so the pipeline slightly overstates its multiple. Trailing P/E 15.0, forward P/E 10.2.",
+    "Q1 FY2027 (ended 2026-10-31, reported 2026-11-19): total revenue +12% to $4.4B; Online Ecosystem revenue +20%; Consumer +7% to $958M.",
+    "Announced a definitive agreement to <b>sell Mailchimp to Bending Spoons</b>; Mailchimp revenue was $313M in the quarter, down 1%.",
+    "Price −59% over 12 months and <b>59% below its high</b> — the largest drawdown of the five; Strong Sell, RSI 27."
+   ],
+   "means": [
+    "The Mailchimp sale is the most consequential item here. Mailchimp was one of the acquisitions that pushed invested capital up and ROIC down; divesting a declining $1.3B-a-year asset should mechanically improve the ROIC that is currently the weakest part of Intuit's score — though the quality score in this report is calculated on annual statements and does not reflect it.",
+    "Underlying growth is intact: +12% total and +20% in the Online Ecosystem are not the numbers of a business losing its market. The 59% drawdown is therefore pricing a future problem, most plausibly AI disruption of paid tax preparation and bookkeeping.",
+    "Guidance was cut for Credit Karma specifically while operating income and EPS guidance were reiterated, which points at one segment rather than company-wide deterioration."
+   ],
+   "uncertain": [
+    "<b>Why the drawdown is twice the pool median.</b> Nothing in the quarter explains a −59% move; either the market has repriced the AI threat to tax software severely, or this is an overshoot.",
+    "<b>Tax seasonality.</b> Earnings are concentrated in the US filing season, so a TTM figure smooths a very uneven year and any single quarter misleads.",
+    "<b>What Credit Karma's guidance change implies.</b> The press release notes a change with corresponding adjustments to Consumer and total revenue guidance; the durability of that is not something this data can assess.",
+    "Quality score is from annual statements and predates both the Mailchimp sale and this quarter."
+   ],
+   "news": [
+    {
+     "date": "2026-11-19",
+     "text": "Q1 FY2027 (quarter ended 31 Oct 2026): total revenue up 12% to $4.4B (+$469M); Online Ecosystem revenue +20% (+$399M); Consumer revenue +7% to $958M; Mailchimp revenue −1% to $313M. Entered a definitive agreement to sell Mailchimp to Bending Spoons. Full-year FY2027 revenue guidance updated to reflect a change to Credit Karma, with GAAP and non-GAAP operating income and EPS guidance reiterated.",
+     "src": "Intuit Q1 FY2027 8-K press release (SEC)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0000896878/000089687826000043/fy27q1earningspressrelease.htm"
+    },
+    {
+     "date": "2026-10-31",
+     "text": "Form 10-Q for the quarter ended 31 October 2026.",
+     "src": "Intuit Form 10-Q (SEC)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0000896878/000089687826000045/intu-20261031.htm"
+    }
+   ]
+  },
+  "NVDA": {
+   "name": "NVIDIA Corporation",
+   "industry": "Semiconductors — accelerated computing (GPUs, data-centre systems, networking)",
+   "peers": [
+    "MU",
+    "AVGO",
+    "AMD",
+    "QCOM",
+    "LRCX"
+   ],
+   "peer_caveat": "Peers are the nearest US-listed semiconductor names in the universe. None is a close substitute for NVIDIA's data-centre platform position.",
+   "peer_note": "NVIDIA sits at <b>13.5× normalized EV/EBITDA</b> with a <b>7.6× forward P/E</b> — more expensive than MU (5.9×) but cheaper than QCOM (15.5×), AMAT (20.2×) and LRCX (21.8×), despite having by far the best fundamentals of the group: <b>59% ROIC and a 42% FCF margin</b>, both the highest in the peer set, with net debt/EBITDA of 0.17. The contrast with QCOM is the sharpest: QCOM's latest quarter revenue fell 8% year on year and it still trades at a higher multiple than NVIDIA, whose latest quarter grew 103%. The one place NVIDIA compares badly is cash conversion — CFO is 0.92× net income, below MU's 2.83 and the weakest of the five picks.",
+   "says": [
+    "Quality 82.5, second-highest in the pool, on 59% ROIC, a 42% FCF margin and low leverage (0.17).",
+    "13.5× normalized EV/EBITDA (reported 13.0×, a 3% gap), trailing P/E 15.7, forward P/E 7.6.",
+    "Q3 FY2027 (ended 2026-10-25): revenue $115.8B, up 20% sequentially and <b>103% year on year</b>; Data Center revenue $107.6B, up 110%; GAAP gross margin 74.8%; GAAP EPS $2.70; $28.1B returned to shareholders in the quarter.",
+    "Four-year revenue CAGR 100%, EBITDA CAGR 189%.",
+    "Price −30% over 12 months and <b>48% below its high</b>; Strong Sell at <b>RSI 15 — the most oversold reading in the pool</b>."
+   ],
+   "means": [
+    "This is the starkest divergence in the report: revenue more than doubled year on year and the stock is 48% off its high at under 8× forward earnings. The market is not disputing the current results — it is repricing how long the AI capital-expenditure cycle lasts.",
+    "If data-centre spending holds anywhere near current levels, the multiple is very low for a business earning 59% on capital. If the spending is itself a cycle — and it is funded by a small number of hyperscale buyers — then the earnings base is as peak-y as Micron's, just one layer up the stack.",
+    "Cash quality of 0.92 deserves attention rather than alarm. Operating cash flow below net income during hypergrowth usually reflects receivables and inventory building; it becomes a problem only if demand slows while that working capital is committed."
+   ],
+   "uncertain": [
+    "<b>Customer concentration.</b> Data Center is 93% of revenue, and the buyers are a handful of hyperscalers and AI labs. Neither the concentration nor the financing behind their orders is visible in this data.",
+    "<b>Durability of the capex cycle</b>, which is the only question that matters for the multiple and the one this tool cannot answer.",
+    "<b>Growth CAGRs of 100% and 189% cannot persist</b>, and the quality score rewards them as if they were stable characteristics.",
+    "The quarterly statements behind the valuation ratios end 2026-07-31; the Q3 results above were reported after that and are not in the computed multiples."
+   ],
+   "news": [
+    {
+     "date": "2026-11-18",
+     "text": "Q3 FY2027 (quarter ended 25 Oct 2026): revenue $115.8B, up 20% from the prior quarter and up 103% year on year. Data Center revenue $107.6B, up 110% year on year and 21% sequentially. GAAP gross margin 74.8%, non-GAAP 74.9%. GAAP EPS $2.70, non-GAAP $2.68. $28.1B returned to shareholders in buybacks and dividends during the quarter.",
+     "src": "NVIDIA Q3 FY2027 8-K (SEC)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000088/q3fy27pr.htm"
+    },
+    {
+     "date": "2026-11-18",
+     "text": "Company announcement of third-quarter fiscal 2027 financial results.",
+     "src": "NVIDIA Investor Relations",
+     "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/"
+    }
+   ]
+  },
+  "CRM": {
+   "name": "Salesforce, Inc.",
+   "industry": "Software — Application (CRM, data and agent platforms)",
+   "peers": [
+    "ADBE",
+    "INTU",
+    "MSFT",
+    "ORCL",
+    "NOW"
+   ],
+   "peer_caveat": "Peers are the nearest enterprise-software names in the universe. Microsoft is both a peer and Salesforce's most direct competitor in CRM.",
+   "peer_note": "On the pipeline's reported-EBITDA ranking Salesforce looks like the third-cheapest name in the tier at 11.0×; on normalized EBITDA it is <b>13.9×</b>, behind ADBE (8.5×) and INTU (9.6×) and only modestly below MSFT (16.7×). Its <b>8% ROIC is the lowest of these five picks and a sixth of ADBE's 45%</b>, while its 5.31 cash quality is the highest — CFO is more than five times net income. Those two figures together describe a company whose GAAP earnings are heavily suppressed by stock compensation and acquired-intangible amortisation, and whose capital base has grown faster than its returns. Against ORCL it has the stronger balance sheet (Oracle's FCF margin is negative on AI capex), and against MSFT and NOW it is cheaper but growing more slowly.",
+   "flag": "<b>Gains distortion:</b> 27% of Salesforce's reported TTM EBITDA is unusual items, largely gains on strategic investments — the company disclosed that $2.43 of its $4.29 Q2 GAAP EPS came from such gains. On normalized EBITDA it is 13.9×, not the pipeline's 11.0×, and its 15.4 trailing P/E is flattered the same way.",
+   "says": [
+    "Quality 69.7 on a 31% FCF margin and 31% EBITDA CAGR, but <b>8% ROIC</b> — the lowest of the five — and 5.31 cash quality.",
+    "13.9× normalized EV/EBITDA versus 11.0× reported: normalized TTM EBITDA is $13.1B against $16.6B reported, a 27% gap.",
+    "Q2 FY2027 (reported 2026-08-26): revenue $11.3B, +11%; cRPO $33.5B, +14%; GAAP operating margin 20.5%, non-GAAP 34.1%; GAAP EPS $4.29, of which $2.43 came from gains on strategic investments.",
+    "Q3 FY2027 guidance: revenue $11.42–11.50B (+11–12%), cRPO growth approximately 14%, excluding the pending Contentful and Fin acquisitions.",
+    "Price −20% over 12 months and 32% below its high — the shallowest drawdown of the five; Strong Sell, RSI 21."
+   ],
+   "means": [
+    "Salesforce is cheaper than it was but not as cheap as the screen says, and the difference is the whole point of normalizing: a quarter of its reported profitability is investment gains that will not recur on schedule.",
+    "The 8% ROIC against a 69.7 quality score is the most important tension in this entry. The score is carried by cash-flow and growth metrics; the return on the capital actually deployed is poor, and years of large acquisitions — with Contentful and Fin still pending — are the reason.",
+    "cRPO growth of 14% running ahead of 11% revenue growth suggests bookings are holding up better than recognised revenue, which is the more forward-looking of the two."
+   ],
+   "uncertain": [
+    "<b>Q3 FY2027 results are due 2026-12-02</b>, so this entry goes stale within days of publication.",
+    "<b>Whether GAAP earnings or cash flow is the truer measure.</b> A 5.31 CFO/net-income ratio means the two tell materially different stories, and which to believe determines whether 13.9× is cheap.",
+    "<b>Acquisition appetite.</b> Contentful and Fin are pending and excluded from guidance; further deals would keep diluting ROIC.",
+    "<b>AI substitution in CRM</b> cuts both ways — Agentforce is the growth story and also the admission that seat-based licensing may not be the future model."
+   ],
+   "news": [
+    {
+     "date": "2026-08-26",
+     "text": "Q2 FY2027 (quarter ended 31 Jul 2026): revenue $11.3B, +11%; cRPO $33.5B, +14%; GAAP operating margin 20.5%, non-GAAP 34.1%; GAAP EPS $4.29, of which $2.43 came from gains on strategic investments. FY2027 revenue guidance $46.1–46.4B (+11–12%); Q3 FY2027 revenue guidance $11.42–11.50B with cRPO growth of approximately 14%.",
+     "src": "Salesforce Q2 FY2027 8-K Ex. 99.1 (SEC)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+    },
+    {
+     "date": "2026-11-23",
+     "text": "Third-quarter fiscal 2027 results are scheduled for release on Wednesday 2 December 2026, after market close.",
+     "src": "Salesforce Investor Relations",
+     "url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx"
+    }
+   ]
+  }
+ }
+}

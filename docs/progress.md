@@ -35,7 +35,22 @@ retargets it. Run: `prun python3 scripts/freshness.py`.
 > git-ignored, so each PC has its own pipeline output and its own freshness.
 > The sections below are labelled by machine; neither describes the other.
 
-## Data state — devenv container (as of 2026-11-23) — BROKEN, do not report from this
+## Data state — devenv container (as of 2026-11-23 06:28) — all three FRESH
+Full chain re-run successfully after the 11-13 failure:
+- **quality** scored 06:22. 149 unique tickers scraped → **126 scored**;
+  **all 130 universe tickers have statements written today** (zero stale
+  fallbacks — the thing that failed on 11-13). 4 excluded: SPCX, ANT, HONA
+  (<3 years), UPST (missing data). 6 download failures occurred but retried
+  clean.
+- **technical** rated 06:24, 129 of 130 (ANT: not enough price history — it is
+  a recent listing and is unscored anyway, so no impact).
+- **valuation** computed 06:28, 130 rows, zero failures.
+- **Pool is now 126**, changed again from 121 and 128, so percentile scores are
+  not comparable with any earlier report.
+- Market context: 72 of 126 rate Strong Sell, median name 29% below its 1-year
+  high, median normalized EV/EBITDA 15.1.
+
+### The 11-13 failure, for the record — BROKEN, superseded by the above
 
 The 2026-11-13 quality re-run **exited 0 but largely failed at stage 2**
 (annual-statement downloads). Of the 133 unique tickers in the rebuilt
@@ -62,8 +77,7 @@ Consequences:
   dropped ones (incl. INOD, which the 11-13 report discussed). Technical is
   also STALE at 10 days.
 
-**All three pipelines are mutually inconsistent. The fix is to re-run
-`run_quality.sh`, then technical, then valuation — awaiting a decision.**
+**Resolved 2026-11-23** by re-running the full chain (see above).
 
 Process note: the monitor filter used for that run watched for stage markers
 and metric-stage warnings but not stage-2 per-ticker download failures, so the
@@ -137,6 +151,23 @@ future runs.
 - `freshness.py` reports all three pipelines FRESH for the first time (exit 0).
 
 ## Reports
+- `reports/2026-11-23-cheap-and-high-quality.html` + `.notes.json` — **first
+  container report built with the second PC's HTML generator** rather than
+  hand-written Markdown. Top 5 on **normalized** EBITDA: MU, ADBE, INTU, NVDA,
+  CRM. On the reported basis it would have been MU, ADBE, INTU, **GOOG**, CRM —
+  GOOG's reported TTM EBITDA is 68% unusual items, so it is really 17.6× not
+  10.5×, and it drops to tenth. CRM's gap is 27% (13.9× not 11.0×). 10 of 114
+  names have gaps above 10%.
+  **MU is the headline and the main warning**: cheapest in the tier at 5.9× and
+  the pool's highest quality score (83.7), but FY2026 revenue was $133.2B
+  against $37.4B, DRAM ASPs rose ~180% and Q4 gross margin was 86.8% — a normal
+  multiple on peak-cycle memory earnings, with the stock already 51% off its
+  high. Its quality score is largely 105% revenue / 253% EBITDA growth
+  percentiles, i.e. the screen rewards cycle amplitude as quality. That is a
+  methodology weakness worth a proposal.
+  NVDA is the other notable: Q3 FY2027 revenue +103% YoY and Data Center +110%,
+  yet 48% off its high at RSI 15, the most oversold name in the pool.
+  News for all five verified against SEC filings / company IR with URLs.
 - `reports/2026-11-13-cheap-and-high-quality.md` — both price pipelines
   refreshed. **Two findings worth carrying forward.** (1) **QCOM's trailing P/E
   of 13.9 is an artefact**: a one-off $5.1bn tax benefit in the 2026-03 quarter
